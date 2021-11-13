@@ -1,0 +1,47 @@
+# ===============================
+# = Persistence configurations
+# ===============================
+server:
+  port: 8065
+  
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eim_local?currentSchema=eim_local
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin00
+  cloud:
+    config:
+      uri: http://localhost:8061
+ 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8060}/eureka
+  instance:
+    hostname: localhost  
+    prefer-ip-address: true    
+      
+#logging hibernate
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# keycloag config
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: eim-socle-v2
+  resource: manage-organisation-api
+  public-client: false
+  bearer-only: true
+  principal-attribute: preferred_username
+
+admin:
+  realm:
+    user: wbadmin_xxww
+    password: wbadmin_
+
+

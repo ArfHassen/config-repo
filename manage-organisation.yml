@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: manage-organisation
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['configprops', 'env', 'health', 'info', 'metrics', 'logfile', 'loggers', 'prometheus', 'threaddump', 'caches', 'liquibase','refresh']
+      base-path: /management
+
+
