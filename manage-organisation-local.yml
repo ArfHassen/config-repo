@@ -32,7 +32,7 @@ logging:
 
 # keycloag config
 keycloak:
-  auth-server-url: http://localhost:8080/auth
+  auth-server-url: http://localhost:8380/auth
   realm: eim-socle-v2
   resource: manage-organisation-api
   public-client: false
